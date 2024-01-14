@@ -9,7 +9,7 @@
 
 
 ## Inroduction
-- Drop Column
+
 Absolutely, data cleaning is a crucial initial step in any data analysis or machine learning project. Clean and well-prepared data forms the foundation for accurate and reliable insights. Here's a general guideline for the data cleaning process:
 
 
@@ -20,7 +20,7 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
 
 
 ## Feature Selection
-
+- Drop Column
 In the data cleaning process, I performed feature selection to streamline the dataset and focus on the most relevant information. The following columns were identified as unnecessary or not contributing significantly to the analysis:
 
 - `Short Name:` This column was dropped as it provides a shorter version of the player's name, which is redundant with the long name.
