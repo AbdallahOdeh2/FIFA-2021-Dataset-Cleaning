@@ -1,7 +1,7 @@
 # FIFA-2021-Dataset-Cleaning
 - [Introduction](#Introduction)
 - [Datasets](#Datasets)
-- [Feature_Selection](#Feature_Selection)
+- [Feature Selection](#Feature_Selection)
 
 
 
@@ -18,7 +18,7 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
 - **Data Source** : [Kaggle](https://www.kaggle.com/datasets/yagunnersya/fifa-21-messy-raw-dataset-for-cleaning-exploring/data?select=fifa21+raw+data+v2.csv)
 
 
-##Feature Selection## 
+## Feature Selection
 
 In the data cleaning process, I performed feature selection to streamline the dataset and focus on the most relevant information. The following columns were identified as unnecessary or not contributing significantly to the analysis:
 
