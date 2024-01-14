@@ -72,23 +72,26 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
     ```python
     import pandas as pd
     
-    # Function to remove euro signs and unwanted characters
-    def clean_numeric_column(value):
-        return pd.to_numeric(str(value).replace('€', '').replace(',', ''), errors='coerce')
+    # Function to remove `cm` and make all heights as same measurment
+    def convert_height_cm(x):
+    if 'cm' in x:
+        return int(x.replace('cm', ''))
+    else:
+        height = x.split("'")
+        return round(int(height[0])*30.48+int(height[1][0])*2.54)
     
-    # Function to split 'Joined' column into 'Start_Date' and 'End_Date'
-    def split_joined_column(row):
-        if '-' in str(row['Joined']):
-            start_date, end_date = map(str.strip, str(row['Joined']).split('-'))
-            return pd.Series({'Start_Date': start_date, 'End_Date': end_date})
-        else:
-            return pd.Series({'Start_Date': None, 'End_Date': None})
+    # Function to convert lbs to kg and remove the sign of kg
+    def weight_to_kg(x):
+    if "kg" in x:
+        return int(x[:-2])
+    else:
+        return round(int(x[:-3])*0.45359237)
     
     # Apply functions to DataFrame
     df['Numeric_Column'] = df['Numeric_Column'].apply(clean_numeric_column)
     df[['Start_Date', 'End_Date']] = df.apply(split_joined_column, axis=1)
 
-
+    
 
 
 
