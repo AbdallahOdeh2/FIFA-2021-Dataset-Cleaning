@@ -1,7 +1,7 @@
 # FIFA-2021-Dataset-Cleaning
 - [Introduction](#Introduction)
 - [Datasets](#Datasets)
-- [Drop Columns](#Drop_Columns)
+- [Feature Selection](#Feature_Selection)
 
 
 
@@ -18,4 +18,14 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
 - **Data Source** : [Kaggle](https://www.kaggle.com/datasets/yagunnersya/fifa-21-messy-raw-dataset-for-cleaning-exploring/data?select=fifa21+raw+data+v2.csv)
 
 
-## Drop Columns
+##Feature Selection## 
+
+In the data cleaning process, I performed feature selection to streamline the dataset and focus on the most relevant information. The following columns were identified as unnecessary or not contributing significantly to the analysis:
+
+1. **Short Name:** This column was dropped as it provides a shorter version of the player's name, which is redundant with the long name.
+
+2. **PlayerURL and PhotoURL:** These columns were removed as they contain URLs that don't contribute meaningful information for analysis and modeling.
+
+3. **Loan Date End:** The entire column was dropped due to a significant number of null values. Since the information about the end date of loans was incomplete, it was deemed not useful for the analysis.
+
+The feature selection process aimed to improve the dataset's clarity, focusing on the essential information relevant to the data analysis goals.
