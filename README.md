@@ -20,7 +20,7 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
 
 
 ## Feature Selection
-- Drop Column:
+- Drop Column :
   
     In the data cleaning process, I performed feature selection to streamline the dataset and focus on the most relevant information. The following columns were identified as unnecessary or not contributing significantly to the analysis:
     
@@ -31,3 +31,67 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
     - `Loan Date End:` The entire column was dropped due to a significant number of null values. Since the information about the end date of loans was incomplete, it was deemed not useful for the analysis.
     
     The feature selection process aimed to improve the dataset's clarity, focusing on the essential information relevant to the data analysis goals.
+  
+- Handling Missing Data :
+    the process also contain handling the missing values in dataset so, any null values consider as dirty data and it cleaned by drop it or filling it with the relative values
+    - `Hits:`The column contained some missing values. To ensure data integrity and consistency, missing values in this column were imputed with a value of zero
+
+- Dealing with Duplicates:
+    Duplicate rows were carefully identified and removed from the dataset. This process ensured that each entry in the dataset is unique, preventing any potential distortions in the analysis results.
+    and in this dataset there is no duplicates
+  
+- applying some formulas in Excel :
+      1. **Substitute Function:**
+         - Used the `SUBSTITUTE` function to replace euro signs or other unwanted characters in numeric columns.
+      
+          ```
+          =SUBSTITUTE(A1, "€", "")
+          ```
+      
+      2. **IF and ISNUMBER Functions:**
+         - Employed the combination of `IF` and `ISNUMBER` functions to identify and handle numeric values while accounting for non-numeric entries.
+      
+          ```
+          =IF(ISNUMBER(VALUE(A1)), VALUE(A1), 0)
+          ```
+      
+      3. **Splitting 'Joined' Column into 'Start_Date' and 'End_Date':**
+         - Utilized the `LEFT` and `RIGHT` functions to split a column, named 'Joined', into 'Start_Date' and 'End_Date'.
+      
+          ```
+          Start_Date: =LEFT(A1, FIND("-", A1)-1)
+          End_Date: =RIGHT(A1, LEN(A1)-FIND("-", A1))
+          ```
+- Create Functions in Python:
+-   ```
+    python
+     Python Functions for Cleaning Numeric Columns
+    
+    When transitioning to Python, similar data cleaning operations can be performed using custom functions. Assuming you are working with a DataFrame using a library like Pandas:
+    
+    ```python
+    import pandas as pd
+    
+    # Function to remove euro signs and unwanted characters
+    def clean_numeric_column(value):
+        return pd.to_numeric(str(value).replace('€', '').replace(',', ''), errors='coerce')
+    
+    # Function to split 'Joined' column into 'Start_Date' and 'End_Date'
+    def split_joined_column(row):
+        if '-' in str(row['Joined']):
+            start_date, end_date = map(str.strip, str(row['Joined']).split('-'))
+            return pd.Series({'Start_Date': start_date, 'End_Date': end_date})
+        else:
+            return pd.Series({'Start_Date': None, 'End_Date': None})
+    
+    # Apply functions to DataFrame
+    df['Numeric_Column'] = df['Numeric_Column'].apply(clean_numeric_column)
+    df[['Start_Date', 'End_Date']] = df.apply(split_joined_column, axis=1)
+
+
+
+
+
+
+
+         
