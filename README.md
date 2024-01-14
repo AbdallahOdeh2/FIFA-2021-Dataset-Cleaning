@@ -1,7 +1,7 @@
 # FIFA-2021-Dataset-Cleaning
 - [Introduction](#Introduction)
 - [Datasets](#Datasets)
-- [Feature Selection](#Feature_Selection)
+- [Feature_Selection](#Feature_Selection)
 
 
 
