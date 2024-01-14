@@ -94,8 +94,8 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
     ```
 
 
-   ##Conclusion
-  In Conclusion, this tiny project successfully cleaned Fifa Dataset by appling the main method of cleaning datasets and making ready for visualization or modeling
+   ## Conclusion
+  In conclusion, this miniature project has adeptly cleansed the FIFA dataset, employing fundamental data cleaning techniques, and has now primed the data for seamless visualization or modeling endeavors.
 
 
 
