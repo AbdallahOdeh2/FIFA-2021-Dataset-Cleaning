@@ -2,6 +2,7 @@
 - [Introduction](#Introduction)
 - [Datasets](#Datasets)
 - [Feature Selection](#Feature_Selection)
+- [Conclusion](#Conclusion)
 
 
 
@@ -90,8 +91,11 @@ The datasets used in Kaggle as a challenge to data cleaner interester , it provi
     # Apply functions to DataFrame
     df['Numeric_Column'] = df['Numeric_Column'].apply(clean_numeric_column)
     df[['Start_Date', 'End_Date']] = df.apply(split_joined_column, axis=1)
+    ```
 
-    
+
+   ##Conclusion
+  In Conclusion, this tiny project successfully cleaned Fifa Dataset by appling the main method of cleaning datasets and making ready for visualization or modeling
 
 
 
